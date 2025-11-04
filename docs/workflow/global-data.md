@@ -9,7 +9,7 @@ For example, you have multiple new tab blocks wherein the URL input has the same
 
 ```json
 {
-  "url": "https://dribbble.com"
+  global-data.md
 }
 ```
 And access the global data inside the URL text field of the New Tab block using an [expression](./expressions.md). For example, <code v-pre>{{globalData.url}}</code>
