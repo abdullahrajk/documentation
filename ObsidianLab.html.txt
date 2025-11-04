@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian Lab: Aspirational Portfolio (Mega Boosted)</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        /* Obsidian Lab Palette: Utilizing a dark gray/black background for 'Obsidian' with vibrant accents. */
+        .bg-obsidian { background-color: #1a1a1a; }
+        .color-primary { background-color: #FF5733; }
+        .color-accent { background-color: #33FFC4; }
+        .text-primary { color: #FF5733; }
+        .text-mint { color: #33FFC4; }
+        .bg-sky-blue { background-color: #3399FF; }
+        .bg-violet { background-color: #7A33FF; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        /* Card/Text Styling for Dark Mode */
+        .info-card { background-color: #2c2c2c; color: white; border: 1px solid #3d3d3d; }
+        
+        /* Chart Container Styling for responsiveness */
+        .chart-container { 
+            position: relative; 
+            width: 100%; 
+            max-width: 700px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            height: 350px; 
+            max-height: 400px; 
+        }
+        @media (min-width: 768px) { 
+            .chart-container { 
+                height: 400px; 
+            } 
+        }
+    </style>
+</head>
+<body class="bg-obsidian font-inter p-4 md:p-8 text-gray-100">
+
+    <div class="max-w-7xl mx-auto">
+        
+        <header class="mb-12 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+                <span class="text-mint">Obsidian Lab</span> Performance Analysis
+            </h1>
+            <p class="mt-2 text-2xl font-semibold text-gray-400">
+                Headline: <strong>@TheObsidianPathLab</strong>
+            </p>
+            <p class="mt-4 text-xl text-gray-500 max-w-3xl mx-auto">
+                Yeh woh **MEGA BOOSTED** data hai jo aapke **Obsidian Lab** channel ki _supreme_ growth ke baad dikhna chahiye (**1.5 Crore Views** target).
+            </p>
+        </header>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 border-l-4 border-mint pl-3 text-gray-100">
+                Obsidian Lab Core Metrics (KPIs)
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="info-card rounded-xl shadow-lg p-6 transform transition duration-300 hover:shadow-2xl hover:translate-y-[-2px] border-b-4 border-primary">
+                    <p class="text-lg font-semibold text-gray-400">Kul Views (Supreme Target)</p>
+                    <p class="text-4xl font-extrabold text-primary mt-2">15,000,000+</p>
+                    <p class="text-sm text-gray-500 mt-3">High-Impact Content ka nishaan.</p>
+                </div>
+
+                <div class="info-card rounded-xl shadow-lg p-6 transform transition duration-300 hover:shadow-2xl hover:translate-y-[-2px] border-b-4 border-sky-blue">
+                    <p class="text-lg font-semibold text-gray-400">Kul Subscribers</p>
+                    <p class="text-4xl font-extrabold text-sky-blue mt-2">180,000</p>
+                    <p class="text-sm text-gray-500 mt-3">Increased growth for maximum reach.</p>
+                </div>
+
+                <div class="info-card rounded-xl shadow-lg p-6 transform transition duration-300 hover:shadow-2xl hover:translate-y-[-2px] border-b-4 border-mint">
+                    <p class="text-lg font-semibold text-gray-400">Kul Watch Time (Hours)</p>
+                    <p class="text-4xl font-extrabold text-mint mt-2">700,000</p>
+                    <p class="text-sm text-gray-500 mt-3">Superior content retention ka saboot.</p>
+                </div>
+                
+                <div class="info-card rounded-xl shadow-lg p-6 transform transition duration-300 hover:shadow-2xl hover:translate-y-[-2px] border-b-4 border-violet">
+                    <p class="text-lg font-semibold text-gray-400">Average CTR (Click-Through Rate)</p>
+                    <p class="text-4xl font-extrabold text-violet mt-2">9.0%</p>
+                    <p class="text-sm text-gray-500 mt-3">Thumbnail aur title ki _ultra_ appeal.</p>
+                </div>
+            </div>
+        </section>
+        
+        ---
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 border-l-4 border-mint pl-3 text-gray-100">
+                Managed & Propar Trend Analysis
+            </h2>
+            <p class="mb-8 text-gray-400">
+                Yeh chart _steady_ aur _consistent_ growth trend dikhate hain, jo **Obsidian Lab** ke scientific approach ko darshata hai.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <div class="info-card rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-200">Views aur Subscriber Growth Trend</h3>
+                    <div class="chart-container">
+                        <canvas id="growthTrendChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4">
+                        Dono metrics mein waqt ke saath _managed_ aur _smooth_ uchaal dikh raha hai.
+                    </p>
+                </div>
+
+                <div class="info-card rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-200">Watch Time aur Avg. View Duration Trend</h3>
+                    <div class="chart-container">
+                        <canvas id="engagementTrendChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4">
+                        Watch Time (Hazar Hours) aur AVD (Average View Duration) bhi sahi tarah se badh rahe hain.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        ---
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 border-l-4 border-mint pl-3 text-gray-100">
+                Obsidian Lab Achievement Badges / Certificates
+            </h2>
+            <p class="mb-8 text-gray-400">
+                Aapke **Obsidian Lab** channel ki zabardast kamyabi ke certificates (badges).
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="color-primary rounded-xl shadow-xl p-6 text-white text-center transform hover:scale-[1.02] transition duration-300">
+                    <div class="text-6xl mb-2"><i class="fa-solid fa-star"></i></div> 
+                    <p class="text-2xl font-bold">15 Million Views Club</p>
+                    <p class="text-sm mt-1">Sab se zyada dekhe jane ka record!</p>
+                </div>
+
+                <div class="bg-sky-blue rounded-xl shadow-xl p-6 text-white text-center transform hover:scale-[1.02] transition duration-300">
+                    <div class="text-6xl mb-2"><i class="fa-solid fa-trophy"></i></div>
+                    <p class="text-2xl font-bold">Silver Play Button</p>
+                    <p class="text-sm mt-1">100,000 Subscribers ka milestone!</p>
+                </div>
+
+                <div class="bg-mint rounded-xl shadow-xl p-6 text-gray-900 text-center transform hover:scale-[1.02] transition duration-300">
+                    <div class="text-6xl mb-2"><i class="fa-solid fa-circle-check"></i></div>
+                    <p class="text-2xl font-bold">High Retention Expert</p>
+                    <p class="text-sm mt-1">Aapka content viewers ko rokay rakhta hai.</p>
+                </div>
+            </div>
+        </section>
+
+        ---
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 border-l-4 border-mint pl-3 text-gray-100">
+                Obsidian Lab SEO Focus: Key Words aur Tags
+            </h2>
+            <p class="mb-8 text-gray-400">
+                Aapke channel ko discovery mein madad karne wale sab se important keywords aur categories.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="info-card rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-200">Top Content Categories (%)</h3>
+                    <div class="chart-container">
+                        <canvas id="keywordDonutChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4">
+                        Yeh chart dikhata hai ki aapka zyada tar content kis category se related hai (Searchable Tags).
+                    </p>
+                </div>
+                
+                <div class="info-card rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-200">High-Performance Key Tags</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-sky-blue text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">#ObsidianTech</span>
+                        <span class="bg-primary text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">#LabReviews</span>
+                        <span class="bg-mint text-gray-900 text-sm font-medium px-4 py-2 rounded-full shadow-md">#PathExperiments</span>
+                        <span class="bg-violet text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">#ScienceHacks</span>
+                        <span class="bg-gray-700 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">#DeepDive</span>
+                        <span class="bg-yellow-500 text-gray-900 text-sm font-medium px-4 py-2 rounded-full shadow-md">#TutorialsInUrdu</span>
+                        <span class="bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">#TechAnalysis</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4">
+                        In tags ko aap apne videos mein use kar sakte hain taaki aapka channel zyada logon tak pahuche.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Chart.js Label Wrapping Function
+        function wrapLabel(label, maxCharPerLine) {
+            if (label.length <= maxCharPerLine) return label;
+            
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).length <= maxCharPerLine || currentLine.length === 0) {
+                    currentLine = (currentLine.length === 0) ? word : currentLine + ' ' + word;
+                } else {
+                    lines.push(currentLine);
+                    currentLine = word;
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine);
+            }
+            return lines;
+        }
+
+        // Chart.js Default Configuration for Dark Theme
+        Chart.defaults.color = '#ccc';
+        Chart.defaults.borderColor = '#444';
+
+        // --- Data Mocking for Aspirational Metrics (Mega Boosted) ---
+        const trendLabels = ['Q1 2024', 'Q2 2024', 'Q3 2024', 'Q4 2024', 'Q1 2025', 'Q2 2025', 'Q3 2025', 'Q4 2025'];
+        // Increased Views data
+        const aspirationalViews = [500000, 1800000, 4500000, 7500000, 10500000, 12800000, 14000000, 15000000]; 
+        // Increased Subscriber data
+        const aspirationalSubs = [1000, 6000, 25000, 55000, 95000, 130000, 160000, 180000]; 
+
+        // Increased Watch Time data
+        const aspirationalWatchTime = [50000, 140000, 250000, 400000, 550000, 630000, 680000, 700000];
+        const aspirationalAvgViewDuration = [35, 50, 65, 85, 105, 120, 130, 135]; // Slightly increased AVD
+        
+        const keywordData = [
+            { label: wrapLabel("Short Form Content/Shorts", 16), value: 45, color: '#FF5733' },
+            { label: wrapLabel("Long Form Tutorials/Reviews", 16), value: 30, color: '#3399FF' },
+            { label: wrapLabel("Vlogs and Lifestyle", 16), value: 15, color: '#33FFC4' },
+            { label: wrapLabel("Experiments & Challenges", 16), value: 10, color: '#7A33FF' }
+        ];
+
+        // --- Chart 1: Views and Subscriber Growth Trend ---
+        new Chart(document.getElementById('growthTrendChart'), {
+            type: 'line',
+            data: {
+                labels: trendLabels,
+                datasets: [
+                    {
+                        label: 'Kul Views (Millions)',
+                        data: aspirationalViews.map(v => v / 1000000), 
+                        borderColor: '#FF5733', 
+                        backgroundColor: 'rgba(255, 87, 51, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Subscribers (Thousands)',
+                        data: aspirationalSubs.map(v => v / 1000), 
+                        borderColor: '#3399FF', 
+                        backgroundColor: 'rgba(51, 153, 255, 0.2)',
+                        fill: false,
+                        tension: 0.4,
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Views (Million)' }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        grid: { drawOnChartArea: false },
+                        title: { display: true, text: 'Subscribers (Thousands)' }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // --- Chart 2: Watch Time & Engagement Trend ---
+        new Chart(document.getElementById('engagementTrendChart'), {
+            type: 'line',
+            data: {
+                labels: trendLabels,
+                datasets: [
+                    {
+                        label: 'Watch Time (Hazar Hours)',
+                        data: aspirationalWatchTime.map(v => v / 1000), 
+                        borderColor: '#33FFC4', 
+                        backgroundColor: 'rgba(51, 255, 196, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Avg. View Duration (Seconds)',
+                        data: aspirationalAvgViewDuration,
+                        borderColor: '#7A33FF', 
+                        backgroundColor: 'rgba(122, 51, 255, 0.2)',
+                        fill: false,
+                        tension: 0.4,
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Watch Time (Hazar Hours)' }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        grid: { drawOnChartArea: false },
+                        title: { display: true, text: 'AVD (Seconds)' }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // --- Chart 3: Keyword Donut Chart ---
+        new Chart(document.getElementById('keywordDonutChart'), {
+            type: 'doughnut',
+            data: {
+                labels: keywordData.map(item => item.label),
+                datasets: [{
+                    data: keywordData.map(item => item.value),
+                    backgroundColor: keywordData.map(item => item.color),
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            },
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + '%';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
